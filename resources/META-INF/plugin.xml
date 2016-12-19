@@ -1,0 +1,42 @@
+<idea-plugin version="2">
+    <id>com.github.michalszynkiewicz.analyze-multiple-stacktraces</id>
+    <name>Analyze multiple stack traces</name>
+    <version>0.1</version>
+    <vendor email="michal.l.szynkiewicz@gmail.com" url="http://github.com/michalszynkiewicz">Michał Szynkiewicz</vendor>
+
+    <description><![CDATA[
+      A simplistic plugin that allows you to grep processes by name/substring of the ps -aux output and open stack traces of all grepped processes.
+
+      <h3>WARNING: works on systems which provide `ps aux`, i.e. doesn't work on windows</h3>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="145.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="AnalyzeMultipleStacktraces" class="main.scala.OpenStacks" text="Analyze multiple Stacktraces"
+                description="Grep pses by substring and analyze stacktraces of matches">
+            <add-to-group group-id="AnalyzeActions" anchor="last"/>
+        </action>
+        <!--<group id="AnalyzeActions" text="Advanced analyze" description="My custom options">-->
+            <!--<add-to-group group-id="MainMenu" anchor="last"/>-->
+            <!--<action id="Myplugin.Textboxes" class="main.scala.OpenStacks" text="Analyze multiple Stacktraces"-->
+                    <!--description="Grep pses by substring and analyze stacktraces of matches"/>-->
+        <!--</group>-->
+    </actions>
+
+</idea-plugin>
